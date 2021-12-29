@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "hello/greeter";
+option java_multiple_files = true;
+option java_package="org.hercules.example.echo";
+option java_outer_classname = "Greeter";
+
+package greeter;
+
+// The greeting service definition.
+service GreeterRequestService {
+  // Sends a greeting
+  rpc _call (GreeterRequest) returns (GreeterReply) {}
+}
+
+// The request message containing the user's name.
+message GreeterRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message GreeterReply {
+  string message = 1;
+}
